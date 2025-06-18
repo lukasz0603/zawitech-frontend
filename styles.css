@@ -361,3 +361,21 @@
         user-select: none;
       }
     }
+
+
+/* --- Przyciski globalne --- */
+.btns {
+  padding: 15px 30px;
+  background: #0057b7;
+  color: white !important;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 5px 20px rgb(0 87 183 / 0.6);
+  transition: background 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+.btns:hover {
+  background: #003a7e;
+}
