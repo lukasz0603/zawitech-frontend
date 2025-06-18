@@ -365,7 +365,7 @@
 
 /* --- Przycisk kontakt w menu --- */
 .btns {
- padding: 15px 40px;
+      padding: 15px 40px;
       background: #0057b7;
       color: white;
       border-radius: 30px;
@@ -377,11 +377,6 @@
 
 }
 .btns:hover {
-    background: #003a7e;
+      background: #003a7e;
 }
 
-.nav-btns {
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  box-shadow: 0 3px 10px rgb(0 87 183 / 0.4);
-}
