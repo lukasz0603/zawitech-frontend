@@ -1,0 +1,363 @@
+    /* --- Reset i podstawy --- */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+    a {
+      color: #0057b7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #003a7e;
+    }
+
+    /* --- Kontener --- */
+    .container {
+      max-width: 1820px;
+      margin: 0 auto;
+      padding: 0 20px;
+      margin-bottom: 0px;
+    }
+
+    /* --- Nagłówek i nawigacja --- */
+    header {
+      background: rgba(255 255 255 / 0.9);
+      position: fixed;
+      width: 100%;
+      padding: 20px 0;
+      top: 0; left: 0;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #0057b7;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav ul li button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      color: #0057b7;
+      transition: color 0.3s ease;
+    }
+    nav ul li button:hover {
+      color: #003a7e;
+    }
+
+    /* --- Hero sekcja --- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 20px;
+
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      max-width: 700px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.1;
+
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 550px;
+      margin-bottom: 40px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+    .hero a.btn {
+      padding: 15px 40px;
+      background: #0057b7;
+      color: white;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      box-shadow: 0 5px 20px rgb(0 87 183 / 0.6);
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    .hero a.btn:hover {
+      background: #003a7e;
+    }
+
+    /* --- Sekcje główne --- */
+    section {
+      padding: 100px 0;
+      background: white;
+      box-shadow: 0 0 20px rgb(0 0 0 / 0.05);
+      border-radius: 15px;
+      margin: 40px 0;
+    }
+    section .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* --- Sekcja Usługi --- */
+    #services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0057b7;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+    }
+    .service-card {
+      flex: 1 1 280px;
+      background: #f9fbfd;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+    }
+    .service-card h3 {
+      color: #003a7e;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* --- Sekcja Zespół --- */
+    #team h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0057b7;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .team-member {
+      background: #f9fbfd;
+      flex: 1 1 220px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.07);
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgb(0 0 0 / 0.15);
+    }
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #0057b7;
+    }
+    .team-member h4 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #003a7e;
+    }
+    .team-member p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* --- Sekcja FAQ --- */
+    #faq {
+      background: #f0f4fa;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 15px rgb(0 0 0 / 0.05);
+    }
+    #faq h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #0057b7;
+      font-weight: 700;
+      text-align: center;
+    }
+    details {
+      background: white;
+      margin-bottom: 15px;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.06);
+      cursor: pointer;
+      font-size: 1.05rem;
+      color: #333;
+      transition: background 0.3s ease;
+    }
+    details[open] {
+      background: #e6f0ff;
+      box-shadow: 0 4px 16px rgb(0 87 183 / 0.25);
+    }
+    summary {
+      font-weight: 700;
+      user-select: none;
+      outline: none;
+    }
+
+    /* --- Sekcja Kontakt --- */
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #0057b7;
+      font-weight: 700;
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    input, textarea {
+      padding: 15px 20px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0057b7;
+      box-shadow: 0 0 8px #0057b7aa;
+    }
+    button[type="submit"] {
+      padding: 15px 30px;
+      background: #0057b7;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgb(0 87 183 / 0.7);
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    button[type="submit"]:hover {
+      background: #003a7e;
+    }
+    #formResponse {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* --- Stopka --- */
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      color: #777;
+      font-size: 0.9rem;
+      background: #f7f9fc;
+      margin-top: 60px;
+      user-select: none;
+    }
+
+    /* --- Responsywność --- */
+    @media(max-width: 900px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      nav ul {
+        gap: 20px;
+      }
+      section .container {
+        flex-direction: column;
+      }
+    }
+    @media(max-width: 480px) {
+      .hero {
+        align-items: center;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      nav ul {
+        flex-direction: column;
+        background: white;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        height: calc(100% - 70px);
+        box-shadow: -3px 0 15px rgb(0 0 0 / 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+      nav ul.open {
+        transform: translateX(0);
+      }
+      nav ul li {
+        margin: 15px 0;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: #0057b7;
+        user-select: none;
+      }
+    }

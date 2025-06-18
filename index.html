@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zawitech - Profesjonalne Usługi Data Science</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">ZAWITECH</div>
+      <ul id="nav-links">
+        <li><button data-target="#services">Usługi</button></li>
+        <li><button data-target="#team">Zespół</button></li>
+        <li><button data-target="#faq">FAQ</button></li>
+        <li><button data-target="#contact">Kontakt</button></li>
+        <li><button onclick="openNewTab('materials.html')">Materiały</button></li>
+        <li><button onclick="openNewTab('case-studies.html')">Case Studies</button></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle" aria-label="Menu">&#9776;</div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Profesjonalne usługi Data Science i Machine Learning dla Twojej firmy</h1>
+  <p>Optymalizuj procesy, zwiększaj przychody i przewagę konkurencyjną dzięki analizie danych i sztucznej inteligencji.</p>
+  <a href="#contact" class="btn">Skontaktuj się z nami</a>
+</section>
+
+<section id="services" class="container">
+  <h2>Nasze Usługi</h2>
+  <div class="service-card">
+    <h3>Analiza danych i raportowanie</h3>
+    <p>Tworzymy raporty i wizualizacje, które pomagają zrozumieć Twoje dane oraz podejmować lepsze decyzje biznesowe.</p>
+  </div>
+  <div class="service-card">
+    <h3>Modelowanie predykcyjne</h3>
+    <p>Budujemy modele machine learning przewidujące zachowania klientów, popyt lub wykrywające anomalie w danych.</p>
+  </div>
+  <div class="service-card">
+    <h3>Automatyzacja procesów</h3>
+    <p>Wdrażamy rozwiązania automatyzujące powtarzalne zadania, oszczędzając czas i redukując błędy.</p>
+  </div>
+</section>
+
+<section id="team" class="container">
+  <h2>Nasz Zespół</h2>
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jan Kowalski" />
+      <h4>Jan Kowalski</h4>
+      <p>Specjalista ds. Data Science z 8-letnim doświadczeniem w analizie danych i ML.</p>
+    </div>
+    <div class="team-member">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Anna Nowak" />
+      <h4>Anna Nowak</h4>
+      <p>Ekspertka AI i Machine Learning, specjalizująca się w deep learningu i NLP.</p>
+    </div>
+    <div class="team-member">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Paweł Wiśniewski" />
+      <h4>Paweł Wiśniewski</h4>
+      <p>Inżynier danych i architekt rozwiązań chmurowych dla projektów big data.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="container">
+  <h2>Najczęściej zadawane pytania</h2>
+  <details>
+    <summary>Jakie dane potrzebujecie do rozpoczęcia projektu?</summary>
+    <p>Przede wszystkim potrzebujemy dostępu do istniejących baz danych lub plików, które dotyczą analizowanego problemu. Szczegóły ustalamy indywidualnie.</p>
+  </details>
+  <details>
+    <summary>Jak długo trwa wdrożenie rozwiązania?</summary>
+    <p>Czas wdrożenia zależy od skali projektu, ale zwykle od 4 do 12 tygodni.</p>
+  </details>
+  <details>
+    <summary>Czy oferujecie wsparcie po zakończeniu projektu?</summary>
+    <p>Tak, zapewniamy pełne wsparcie techniczne oraz aktualizacje modeli i rozwiązań.</p>
+  </details>
+</section>
+
+<section id="contact" class="container">
+  <h2>Skontaktuj się z nami</h2>
+  <form id="contactForm" novalidate>
+    <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required minlength="3" />
+    <input type="email" id="email" name="email" placeholder="Twój e-mail" required />
+    <textarea id="message" name="message" rows="5" placeholder="Twoja wiadomość" required minlength="10"></textarea>
+    <button type="submit">Wyślij</button>
+    <div id="formResponse" role="alert" aria-live="polite"></div>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 ZAWITECH. Wszelkie prawa zastrzeżone.
+</footer>
+
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
