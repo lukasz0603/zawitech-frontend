@@ -1,19 +1,43 @@
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <title>Case Studies - Zawitech</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    .case-study { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; }
-    button { padding: 0.5rem 1rem; background-color: #2d87f0; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background-color: #1e60b4; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zawitech - Profesjonalne Usługi Data Science</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Case Studies</h2>
 
-  <div class="case-study">
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">ZAWITECH</div>
+      <ul id="nav-links">
+        <li><button data-target="#services">Usługi</button></li>
+        <li><button data-target="#team">Zespół</button></li>
+        <li><button data-target="#faq">FAQ</button></li>
+        <li><button data-target="#contact">Kontakt</button></li>
+        <li><button onclick="openNewTab('materials.html')">Materiały</button></li>
+        <li><button onclick="openNewTab('case-studies.html')">Case Studies</button></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle" aria-label="Menu">&#9776;</div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Profesjonalne usługi Data Science i Machine Learning dla Twojej firmy</h1>
+  <p>Optymalizuj procesy, zwiększaj przychody i przewagę konkurencyjną dzięki analizie danych i sztucznej inteligencji.</p>
+  <a href="#contact" class="btn">Skontaktuj się z nami</a>
+</section>
+
+<section id="services" class="container">
+  <h2>Case Studies</h2>
+  
+  <div class="service-card">
     <h3>📩 Spam Detector</h3>
     <p>
       Model klasyfikujący wiadomości jako <strong>spam</strong> lub <strong>nie-spam</strong> na podstawie treści.
@@ -21,14 +45,44 @@
     </p>
     <button onclick="window.open('https://zawitech-backend-ml.onrender.com/?model=Spam%20Detector', '_blank')">Testuję</button>
   </div>
-
-  <div class="case-study">
-    <h2>Sentiment Analyzer<</h2>
+  
+  <div class="service-card">
+    <h3>Sentiment Analyzer</h3>
     <p>Analiza pozytywnego lub negatywnego tonu wypowiedzi.</p>
     <button onclick="window.open('https://zawitech-backend-ml.onrender.com/?model=Sentiment%20Analyzer', '_blank')">Testuję</button>
   </div>
-
   
+   <div class="service-card">
+    <h3>Sentiment Analyzer</h3>
+    <p>
+      Model klasyfikujący wiadomości jako <strong>spam</strong> lub <strong>nie-spam</strong> na podstawie treści.
+      Wykorzystuje algorytm <em>Naive Bayes</em> do szybkiej predykcji tekstów.
+    </p>
+    <button onclick="window.open('https://zawitech-backend-ml.onrender.com/?model=Spam%20Detector', '_blank')">Testuję</button>
+  </div>
+
+    <div class="service-card">
+    <h3>Topic Classifier</h3>
+    <p>
+      Model klasyfikujacy tematatyke w oparciu o wprowadzony tekst.
+    </p>
+    <button onclick="window.open('https://zawitech-backend-ml.onrender.com/?model=Spam%20Detector', '_blank')">Testuję</button>
+  </div>
+
+
+  <div class="case-study">
+    <h2>Price Predictor<</h2>
+    <p>Model przewidujacy cene w oparciu o dane wejsciowe.</p>
+    <button onclick="window.open('https://zawitech-backend-ml.onrender.com/?model=Sentiment%20Analyzer', '_blank')">Testuję</button>
+  </div>
+
+<footer>
+  &copy; 2025 ZAWITECH. Wszelkie prawa zastrzeżone.
+</footer>
+
+
+
+<script src="scripts.js"></script>
+
 </body>
 </html>
-
