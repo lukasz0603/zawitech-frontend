@@ -1,0 +1,36 @@
+<h2>Prognoza deszczu dla Warszawy</h2>
+<button onclick="getPrediction()">Przewiduj deszcz</button>
+
+<table border="1" id="resultTable" style="margin-top: 1em; display: none;">
+  <thead>
+    <tr>
+      <th>Czas</th>
+      <th>Szansa opadu (%)</th>
+      <th>Ryzyko</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+function getPrediction() {
+  fetch("https://api.zawitech.pl/predict")
+    .then(response => response.json())
+    .then(data => {
+      const table = document.getElementById("resultTable");
+      const tbody = table.querySelector("tbody");
+      tbody.innerHTML = ""; // Czyść poprzednie dane
+      data.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.czas}</td>
+          <td>${row.szansa_opadu}</td>
+          <td>${row.ryzyko}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      table.style.display = "table";
+    })
+    .catch(err => alert("Błąd podczas pobierania prognozy: " + err));
+}
+</script>
