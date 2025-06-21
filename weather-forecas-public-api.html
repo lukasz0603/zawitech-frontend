@@ -32,6 +32,9 @@
         <th>Temp. min (°C)</th>
         <th>Szansa opadu (%)</th>
         <th>Ryzyko</th>
+        <th>Wiatr (km/h)</th>
+        <th>Wilgotność (%)</th>
+        <th>Zachmurzenie (%)</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -60,6 +63,9 @@
               <td>${row.temp_min}</td>
               <td>${row.szansa_opadu}</td>
               <td>${row.ryzyko}</td>
+              <td>${row.wind_speed ?? '-'}</td>
+              <td>${row.humidity ?? '-'}</td>
+              <td>${row.cloud_cover ?? '-'}</td>
             `;
             tbody.appendChild(tr);
           });
