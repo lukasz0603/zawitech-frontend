@@ -14,8 +14,13 @@
 
 <script>
 function getPrediction() {
-  fetch("https://zawitech-ml-rest-api.onrender.com")
-    .then(response => response.json())
+  fetch("https://zawitech-ml-rest-api.onrender.com/predict")  // <-- poprawka tutaj
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Błąd HTTP: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
       const table = document.getElementById("resultTable");
       const tbody = table.querySelector("tbody");
@@ -31,6 +36,6 @@ function getPrediction() {
       });
       table.style.display = "table";
     })
-    .catch(err => alert("Błąd podczas pobierania prognozy: " + err));
+    .catch(err => alert("Błąd podczas pobierania prognozy: " + err.message));
 }
 </script>
