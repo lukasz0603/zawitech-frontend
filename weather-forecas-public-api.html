@@ -1,41 +1,76 @@
-<h2>Prognoza deszczu dla Warszawy</h2>
-<button onclick="getPrediction()">Przewiduj deszcz</button>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prognoza opadów</title>
+  <style>
+    body { font-family: Arial; margin: 2em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 0.5em; text-align: center; }
+    th { background-color: #f5f5f5; }
+    select, button { padding: 0.5em; font-size: 1em; }
+  </style>
+</head>
+<body>
 
-<table border="1" id="resultTable" style="margin-top: 1em; display: none;">
-  <thead>
-    <tr>
-      <th>Czas</th>
-      <th>Szansa opadu (%)</th>
-      <th>Ryzyko</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+  <h2>Prognoza opadów – wybierz miasto</h2>
 
-<script>
-function getPrediction() {
-  fetch("https://zawitech-ml-rest-api.onrender.com/predict")  // <-- poprawka tutaj
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Błąd HTTP: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      const table = document.getElementById("resultTable");
-      const tbody = table.querySelector("tbody");
-      tbody.innerHTML = ""; // Czyść poprzednie dane
-      data.forEach(row => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${row.czas}</td>
-          <td>${row.szansa_opadu}</td>
-          <td>${row.ryzyko}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-      table.style.display = "table";
-    })
-    .catch(err => alert("Błąd podczas pobierania prognozy: " + err.message));
-}
-</script>
+  <select id="citySelect">
+    <option value="lublin">Lublin</option>
+    <option value="warszawa">Warszawa</option>
+    <option value="krakow">Kraków</option>
+    <option value="wroclaw">Wrocław</option>
+  </select>
+
+  <button onclick="getPrediction()">Pobierz prognozę</button>
+
+  <table id="resultTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Temp. maks (°C)</th>
+        <th>Temp. min (°C)</th>
+        <th>Szansa opadu (%)</th>
+        <th>Ryzyko</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function getPrediction() {
+      const city = document.getElementById("citySelect").value;
+      const apiUrl = `https://twoja-aplikacja.onrender.com/predict?miasto=${city}`;
+
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) throw new Error("Błąd HTTP: " + response.status);
+          return response.json();
+        })
+        .then(data => {
+          const table = document.getElementById("resultTable");
+          const tbody = table.querySelector("tbody");
+          tbody.innerHTML = "";
+
+          data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${row.data}</td>
+              <td>${row.temp_max}</td>
+              <td>${row.temp_min}</td>
+              <td>${row.szansa_opadu}</td>
+              <td>${row.ryzyko}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+
+          table.style.display = "table";
+        })
+        .catch(err => {
+          alert("Błąd podczas pobierania prognozy: " + err.message);
+        });
+    }
+  </script>
+
+</body>
+</html>
