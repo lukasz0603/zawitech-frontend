@@ -40,7 +40,7 @@
   <script>
     function getPrediction() {
       const city = document.getElementById("citySelect").value;
-      const apiUrl = `https://twoja-aplikacja.onrender.com/predict?miasto=${city}`;
+      const apiUrl = `https://zawitech-ml-rest-api.onrender.com/predict?miasto=${city}`;
 
       fetch(apiUrl)
         .then(response => {
